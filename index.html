@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link rel="icon" type="image/png" href="images/c-logo.png">
      
 
 
@@ -16,9 +17,11 @@
     <!-- NAVBAR -->
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <img src="images/c-logo.png" alt="Logo">
-            </div>
+           <div class="logo">
+  <a href="index.html">
+    <img src="images/c-logo.png" alt="Logo">
+  </a>
+</div>
 
             <!-- HAMBURGER -->
             <input type="checkbox" id="menu-toggle">
@@ -97,81 +100,7 @@
 
 
 
-<!-- 
 
-
-
-<h2 class="section-heading">PRODUCTS</h2>
-
-<div class="main-container">
-
-    <div class="box">
-       
-        <button class="arrow left-arrow" onclick="prevSlide()">&lt;</button>
-        <img id="img1" src="img1.jpg" alt="">
-        <p id="title1"></p>
-    </div>
-
-    <div class="box">
-        <img id="img2" src="img2.jpg" alt="">
-        <p id="title2"></p>
-    </div>
-
-    <div class="box">
-        <img id="img3" src="img3.jpg" alt="">
-        <p id="title3"></p>
-       
-        <button class="arrow right-arrow" onclick="nextSlide()">&gt;</button>
-    </div>
-
-</div>
-<script>
-
-
-let products = [
-    {img: "img1.jpg", title: "SURGICAL DIATHERMY"},
-    {img: "img2.jpg", title: "OT LIGHTS"},
-    {img: "img3.jpg", title: "OT TABLES"},
-
-    {img: "img4.jpg", title: "ENDOSCOPY"},
-    {img: "img5.jpg", title: "LAPROSCOPY"},
-    {img: "img6.jpg", title: "SUCTION MACHINE"},
-
-    {img: "img7.jpg", title: "VENTILATORS"},
-    {img: "img8.jpg", title: "MONITORS"},
-    {img: "img9.jpg", title: "INFUSION PUMP"},
-];
-
-let i = 0;
-
-function loadSlides() {
-    document.getElementById("img1").src = products[i].img;
-    document.getElementById("title1").innerText = products[i].title;
-
-    document.getElementById("img2").src = products[i+1].img;
-    document.getElementById("title2").innerText = products[i+1].title;
-
-    document.getElementById("img3").src = products[i+2].img;
-    document.getElementById("title3").innerText = products[i+2].title;
-}
-
-function nextSlide() {
-    if (i + 3 < products.length) {
-        i += 3;
-        loadSlides();
-    }
-}
-
-function prevSlide() {
-    if (i - 3 >= 0) {
-        i -= 3;
-        loadSlides();
-    }
-}
-
-loadSlides();
-
-</script> -->
 
 
 <section class="prod-slider-section">
@@ -524,20 +453,7 @@ loadSlides();
   <i class="fa-solid fa-phone"></i>
 </a>
 
-<!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/919949969512" 
-   class="floating-whatsapp" 
-   target="_blank" 
-   aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
 
-<!-- FLOATING PHONE BUTTON -->
-<a href="tel:+919949969512" 
-   class="floating-phone" 
-   aria-label="Call">
-  <i class="fa-solid fa-phone"></i>
-</a>
 
 
 </body>
