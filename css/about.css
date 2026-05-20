@@ -1,6 +1,3 @@
-
-
-
 /* ---------------- GLOBAL RESET ---------------- */
 * {
     margin: 0;
@@ -8,6 +5,9 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
 
 /* ---------------- NAVBAR ---------------- */
 .navbar {
@@ -18,6 +18,7 @@
     padding: 12px 30px;
     position: sticky;
     top: 0;
+   background:#f6ffe6;
     z-index: 100;
 }
 
@@ -63,39 +64,48 @@
 /* ---------------- MOBILE RESPONSIVE ---------------- */
 @media (max-width: 900px) {
 
-    .nav-links {
-        position: absolute;
-        top: 110px;
-        left: 0;
-        width: 100%;
-        background: #f7ffe2;
-        flex-direction: column;
-        align-items: center;
-        overflow: hidden;
-        height: 0;
-        transition: height 0.4s ease;
-        z-index: 999;
-    }
+  .navbar {
+    position: relative;
+    flex-direction: row;
+  }
 
-    #menu-toggle:checked ~ .nav-links {
-        height: auto;
-        padding: 20px 0;
-    }
+  .nav-links {
+    position: absolute;
+    top: 100%;              /* ✅ key fix */
+    left: 0;
+    width: 100%;
+    background: #f7ffe2;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.4s ease;
+    z-index: 999;
+  }
 
-    .nav-links li {
-        margin: 12px 0;
-    }
+  #menu-toggle:checked ~ .nav-links {
+    height: auto;
+    padding: 20px 0;
+  }
 
-    .nav-links a {
-        font-size: 18px;
-    }
+  .nav-links li {
+    margin: 12px 0;
+  }
 
-    .hamburger {
-        display: block;
-        font-size: 32px;
-        cursor: pointer;
-    }
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 32px;
+    cursor: pointer;
+    color: #000;
+  }
 }
+
+
+
 
 
 /* ---------------- DEMO CONTENT ---------------- */
@@ -138,22 +148,21 @@
 }
 
 /* MOBILE RESPONSIVE */
-@media (max-width: 900px) {
-    .about-heading {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 32px;
-        text-align: center;
-    }
-}
-
 @media (max-width: 500px) {
+
     .about-img-section {
         height: 320px;
     }
 
     .about-heading {
-        font-size: 26px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        
+        font-size: 24px;
+        width: 90%;
+        text-align: center;
+        line-height: 1.3;
     }
 }
 
@@ -276,62 +285,68 @@
 /*   RESPONSIVE ACCORDION CSS    */
 /* ============================= */
 
-@media(max-width: 1024px){
-    .accordion-card {
-        padding: 18px;
-    }
-    .accordion-header {
-        font-size: 17px;
-        padding: 14px;
-    }
-    .accordion-body p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-}
+/* MOBILE RESPONSIVE */
+@media (max-width: 500px) {
 
-@media(max-width: 768px){
-    .accordion-card {
-        padding: 16px;
-        box-shadow: none;
-        border-radius: 0;
+    .image-text-card {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
     }
-    .accordion-item {
-        border-radius: 6px;
-    }
-    .accordion-header {
-        font-size: 16px;
-        padding: 12px;
-    }
-    .accordion-body p {
-        font-size: 14px;
-        padding: 12px 0;
-    }
-}
 
-@media(max-width: 500px){
+    /* LEFT SIDE */
+    .left-slider-box {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .slide {
+        border-radius: 8px;
+    }
+
+    /* ARROWS */
+    .left-btn,
+    .right-btn {
+        padding: 8px 12px;
+        font-size: 18px;
+    }
+
+    .left-btn {
+        left: 6px;
+    }
+
+    .right-btn {
+        right: 6px;
+    }
+
+    /* RIGHT SIDE */
     .accordion-card {
         width: 100%;
         padding: 12px;
+        margin-top: 0;
+        border-radius: 10px;
         box-shadow: none;
+    }
+
+    .accordion-item {
+        margin-bottom: 10px;
     }
 
     .accordion-header {
         font-size: 15px;
-        padding: 10px;
+        padding: 12px;
     }
 
     .accordion-body {
-        padding: 0 10px;
+        padding: 0 12px;
     }
 
     .accordion-body p {
         font-size: 13px;
-        line-height: 1.4;
+        line-height: 1.5;
         padding: 10px 0;
     }
 }
-
 
 
 

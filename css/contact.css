@@ -6,6 +6,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+
 /* ---------------- NAVBAR ---------------- */
 .navbar {
     
@@ -15,6 +18,7 @@
     padding: 12px 30px;
     position: sticky;
     top: 0;
+   background:#f6ffe6;
     z-index: 100;
 }
 
@@ -99,6 +103,9 @@
     color: #000;
   }
 }
+
+
+
 
 
 /* ---------------- DEMO CONTENT ---------------- */
@@ -266,6 +273,19 @@
 .footer-bottom span {
   color: #86b827;
   font-weight: bold;
+}
+/* FOOTER BOTTOM LINK STYLING */
+.footer-bottom a {
+  color: #86b827; /* మీ బ్రాండ్ గ్రీన్ కలర్ */
+  text-decoration: none; /* నార్మల్ బ్లూ అండర్‌లైన్ పోవడానికి */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* లింక్ పైన మౌస్ పెట్టినప్పుడు కలర్ మారడానికి */
+.footer-bottom a:hover {
+  color: #000000; /* Hover చేసినప్పుడు బ్లాక్ కలర్ అవుతుంది */
+  text-decoration: underline;
 }
 /* ================= MOBILE FOOTER RESPONSIVENESS ================= */
 @media (max-width: 768px) {

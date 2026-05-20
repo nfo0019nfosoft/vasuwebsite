@@ -6,6 +6,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+
 /* ---------------- NAVBAR ---------------- */
 .navbar {
     
@@ -15,6 +18,7 @@
     padding: 12px 30px;
     position: sticky;
     top: 0;
+   background:#f6ffe6;
     z-index: 100;
 }
 
@@ -60,114 +64,23 @@
 /* ---------------- MOBILE RESPONSIVE ---------------- */
 @media (max-width: 900px) {
 
-    .nav-links {
-        position: absolute;
-        top: 110px;
-        left: 0;
-        width: 100%;
-        background: #f7ffe2;
-        flex-direction: column;
-        align-items: center;
-        overflow: hidden;
-        height: 0;
-        transition: height 0.4s ease;
-        z-index: 999;
-    }
+  .navbar {
+    position: relative;
+    flex-direction: row;
+  }
 
-    #menu-toggle:checked ~ .nav-links {
-        height: auto;
-        padding: 20px 0;
-    }
-
-    .nav-links li {
-        margin: 12px 0;
-    }
-
-    .nav-links a {
-        font-size: 18px;
-    }
-
-    .hamburger {
-        display: block;
-        font-size: 32px;
-        cursor: pointer;
-    }
-}
-
-
-/* ---------------- DEMO CONTENT ---------------- */
-.content {
-    padding: 40px;
-    text-align: center;
-}
-
-
-
-
-
-
-
-
-/* GLOBAL RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* NAVBAR */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 30px;
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 1000;
-}
-
-.logo img {
-  width: 90px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #000;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.hamburger {
-  display: none;
-  font-size: 32px;
-  cursor: pointer;
-}
-
-#menu-toggle {
-  display: none;
-}
-
-/* MOBILE NAV */
-@media (max-width: 900px) {
   .nav-links {
     position: absolute;
-    top: 100%;
+    top: 100%;              /* ✅ key fix */
     left: 0;
-    background: #f7ffe2;
     width: 100%;
+    background: #f7ffe2;
     flex-direction: column;
     align-items: center;
-    height: 0;
     overflow: hidden;
-    transition: 0.3s;
+    height: 0;
+    transition: height 0.4s ease;
+    z-index: 999;
   }
 
   #menu-toggle:checked ~ .nav-links {
@@ -175,91 +88,144 @@
     padding: 20px 0;
   }
 
+  .nav-links li {
+    margin: 12px 0;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
   .hamburger {
     display: block;
+    font-size: 32px;
+    cursor: pointer;
+    color: #000;
   }
 }
 
-/* HERO SECTION */
+
+
+
+
+
+
+/* HERO SECTION MAIN */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  font-family: 'Arial', sans-serif; /* క్లీన్ అండ్ బోల్డ్ లుక్ కోసం */
 }
 
-/* FADE SLIDES */
-.hero-fade img {
+/* BACKGROUND IMAGE */
+.hero-image img {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
-  opacity: 0;
-  animation: heroFade 32s infinite;
+  object-position: center;
+  z-index: 1;
 }
 
-/* DELAYS */
-.hero-fade img:nth-child(1) { animation-delay: 0s; }
-.hero-fade img:nth-child(2) { animation-delay: 8s; }
-.hero-fade img:nth-child(3) { animation-delay: 16s; }
-.hero-fade img:nth-child(4) { animation-delay: 24s; }
-
-/* FADE KEYFRAMES */
-@keyframes heroFade {
-  0%   { opacity: 0; }
-  5%   { opacity: 1; }
-  25%  { opacity: 1; }
-  30%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-/* HERO TEXT */
+/* HERO TEXT & LETTERS */
 .hero-text {
   position: absolute;
-  top: 50%;
-  left: 8%;
+  top: 40%;
+  left: 4%; /* ఇమేజ్‌లో ఉన్నట్లుగా ఎడమవైపు మార్జిన్ */
   transform: translateY(-50%);
-  max-width: 650px;
- 
-  padding: 30px;
-  border-radius: 8px;
+  max-width: 780px;
   z-index: 10;
+  padding: 10px;
 }
 
 .hero-text h2 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  color: #000;
+  font-size: 3.6rem; /* అక్షరాలు పెద్దగా కనిపించడానికి */
+  font-weight: 550;   /* ఫుల్ బోల్డ్ లుక్ */
+  color: #111111;    /* డార్క్ బ్లాక్ కలర్ */
+  line-height: 1.25; /* ప్రతి లైన్ మధ్య సరైన గ్యాప్ */
+  letter-spacing: 1.2px; /* అక్షరాల మధ్య స్పేస్ */
+  margin-bottom: 30px;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
-/* BUTTON */
+/* VIEW MORE BUTTON */
 .hero-btn {
   display: inline-block;
-  padding: 12px 30px;
-  background: #3faf38;
-  color: #fff;
+  padding: 12px 28px;
+  background: #7cb324; /* ఇమేజ్‌లో ఉన్న లైట్ గ్రీన్ కలర్ */
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 600;
-  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
-  background: #3faf38;
+  background: #689f1c;
+  transform: translateY(-2px);
 }
 
-/* RESPONSIVE HERO */
+
+
+/* ===================================================
+   MOBILE VIEW (మొబైల్ స్క్రీన్స్ కోసం ప్రత్యేక సెట్టింగ్స్)
+   =================================================== */
 @media (max-width: 768px) {
+  .hero {
+    height: 80vh; /* మొబైల్‌లో స్క్రీన్ సైజ్ అడ్జస్ట్‌మెంట్ */
+  }
+
   .hero-text {
     left: 5%;
     right: 5%;
-    text-align: center;
+    top: 40%;
+    transform: translateY(-50%);
+    max-width: 100%;
   }
 
+  /* మొబైల్‌లో అక్షరాలు స్క్రీన్‌కు సరిపోయేలా తగ్గించాం */
   .hero-text h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem; 
+    line-height: 1.3;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.6); /* ఇమేజ్ బ్యాక్‌గ్రౌండ్ వల్ల అక్షరాలు కనపడకపోతే ఉపయోగపడుతుంది */
+    padding: 10px;
+    border-radius: 5px;
   }
+
+  .hero-btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -803,7 +769,51 @@ body {
 }
 
 
+/* MOBILE RESPONSIVE */
+@media (max-width: 500px) {
 
+    .about-wrapper {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .about-section {
+        padding: 40px 12px;
+    }
+
+    .about-card {
+        width: 100%;
+        padding: 30px 18px;
+        border-radius: 12px;
+    }
+
+    .about-card h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .about-card p {
+        font-size: 16px;
+        line-height: 28px;
+        text-align: justify;
+        margin-bottom: 25px;
+    }
+
+    .about-card h3 {
+        font-size: 20px;
+        margin-bottom: 30px;
+        line-height: 1.4;
+    }
+
+    .view-btn {
+        display: inline-block;
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 17px;
+        border-radius: 6px;
+    }
+}
 
 
 
@@ -967,22 +977,64 @@ body {
 }
 
 /* RESPONSIVE */
-@media (max-width: 992px) {
-  .gallery-card {
-    flex: 0 0 calc(50% - 15px); /* 2 images */
-  }
-}
-
+/* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
-  .gallery-card {
-    flex: 0 0 100%; /* 1 image */
-  }
 
-  .gallery-card img {
-    height: 220px;
-  }
+    .gallery-section {
+        padding: 50px 12px;
+    }
+
+    .gallery-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+    }
+
+    .gallery-wrapper {
+        max-width: 100%;
+    }
+
+    .gallery-track {
+        gap: 15px;
+    }
+
+    .gallery-card {
+        flex: 0 0 100%;
+        border-radius: 12px;
+    }
+
+    .gallery-card img {
+        height: 220px;
+        border-radius: 12px;
+    }
+
+    /* ARROWS */
+    .gallery-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(140, 198, 63, 0.95);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .gallery-btn.left {
+        left: 8px;
+    }
+
+    .gallery-btn.right {
+        right: 8px;
+    }
+
+    .gallery-btn:hover {
+        background: #7CB232;
+    }
 }
-
 
 
 

@@ -19,6 +19,7 @@ body {
     justify-content: space-between;
     padding: 12px 30px;
     position: sticky;
+      background:#f6ffe6;
     top: 0;
     z-index: 100;
 }
@@ -119,7 +120,7 @@ body {
 
 .container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 20px auto;
     background: #ffffff;
     padding: 40px;
     border-radius: 8px;
@@ -474,15 +475,7 @@ p {
 }
 
 @media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  
 
   .contact-box {
     padding: 25px;
